@@ -5,6 +5,7 @@ task:
       image: inok2341/anu:latest
       cpu: 8
       memory: 32G
+  instance_type: "standard"
 
   Sync_script:
       - mkdir -p ~/rom
