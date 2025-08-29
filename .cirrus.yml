@@ -2,7 +2,7 @@ task:
   name: "Build AOSP 16 for vince"
   timeout_in: 480m
   container:
-      image: inok2341/anu:latest
+      image: accupara/aosp:baseline
       cpu: 8
       memory: 32G
   instance_type: "standard"
@@ -13,6 +13,7 @@ task:
       # Init AOSP 16 manifest
       - repo init -b android-16.0.0_r2 -u https://android.googlesource.com/platform/manifest
       - repo sync -c --no-clone-bundle --no-tags -j8
+      - rm -rf hardware/qcom/wlan
       # Clone device + vendor trees
       - git clone https://gitlab.com/android-vince/device/xiaomi/vince.git -b main device/xiaomi/vince
       - git clone https://github.com/anandhan07/android_vendor_xiaomi_vince.git -b pixelexperience-13.0 vendor/xiaomi/vince
