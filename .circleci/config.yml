@@ -4,7 +4,6 @@ jobs:
   build-aosp:
     docker:
       - image: accupara/aosp:baseline
-    resource_class: xlarge   # gives more CPU/RAM (optional)
     steps:
       - checkout
 
