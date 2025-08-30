@@ -12,7 +12,7 @@ jobs:
           command: |
             mkdir -p ~/android && cd ~/android
             repo init -u https://android.googlesource.com/platform/manifest -b android-16.0.0_r2
-            repo sync -c --no-clone-bundle --no-tags -j$(nproc)
+            repo sync -c --no-clone-bundle --no-tags -j8
 
       - run:
           name: Clone device/kernel/vendor repos
